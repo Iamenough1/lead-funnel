@@ -745,6 +745,215 @@
       .kpi-grid { grid-template-columns: 1fr 1fr; }
       .platform-grid { grid-template-columns: 1fr; }
     }
+
+    /* ── YOUTUBE LIBRARY ── */
+    .yt-tabs-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .yt-video-tab {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      max-width: 230px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .yt-video-tab:hover {
+      background: var(--amber-glow);
+      border-color: var(--border-hover);
+      color: var(--text);
+    }
+    .yt-video-tab.active {
+      background: rgba(255, 0, 0, 0.1);
+      border-color: rgba(255, 80, 80, 0.4);
+      color: #ff6060;
+    }
+    .yt-tab-views {
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .yt-player-grid {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 20px;
+      align-items: start;
+    }
+    @media (max-width: 1200px) {
+      .yt-player-grid { grid-template-columns: 1fr; }
+    }
+
+    .yt-embed-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      background: #050505;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .yt-embed-wrap iframe,
+    .yt-embed-wrap > div {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    .yt-now-playing {
+      margin-top: 10px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      min-height: 20px;
+    }
+
+    .yt-search-wrap {
+      position: relative;
+      margin-bottom: 10px;
+    }
+    .yt-search-wrap input {
+      width: 100%;
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px 10px 36px;
+      color: var(--text);
+      font-size: 0.85rem;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .yt-search-wrap input:focus { border-color: var(--border-hover); }
+    .yt-search-wrap input::placeholder { color: var(--text-dim); }
+    .yt-search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.9rem;
+      pointer-events: none;
+    }
+
+    .yt-scope-row {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .yt-scope-btn {
+      padding: 5px 12px;
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-muted);
+      font-size: 0.74rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .yt-scope-btn:hover { border-color: var(--border-hover); color: var(--text); }
+    .yt-scope-btn.active {
+      background: var(--amber-glow);
+      border-color: var(--border);
+      color: var(--gold-light);
+    }
+
+    .yt-results-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-height: 340px;
+      overflow-y: auto;
+    }
+    .yt-result-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 12px;
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .yt-result-item:hover {
+      background: rgba(255, 0, 0, 0.06);
+      border-color: rgba(255, 80, 80, 0.3);
+    }
+    .yt-result-time {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #ff6060;
+      background: rgba(255, 0, 0, 0.1);
+      border: 1px solid rgba(255, 0, 0, 0.2);
+      border-radius: 5px;
+      padding: 3px 7px;
+      flex-shrink: 0;
+      font-variant-numeric: tabular-nums;
+      min-width: 42px;
+      text-align: center;
+      margin-top: 1px;
+    }
+    .yt-result-body { flex: 1; min-width: 0; }
+    .yt-result-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 3px;
+      line-height: 1.3;
+    }
+    .yt-result-video {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .yt-result-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 4px;
+    }
+    .yt-result-tag {
+      font-size: 0.62rem;
+      padding: 1px 6px;
+      border-radius: 3px;
+      background: rgba(212, 160, 23, 0.08);
+      color: var(--text-dim);
+    }
+    .yt-result-play {
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      flex-shrink: 0;
+      margin-top: 3px;
+      transition: color 0.15s;
+    }
+    .yt-result-item:hover .yt-result-play { color: #ff6060; }
+    .yt-results-msg {
+      text-align: center;
+      padding: 32px 0;
+      color: var(--text-dim);
+      font-size: 0.82rem;
+      line-height: 1.8;
+    }
   </style>
 </head>
 <body>
@@ -769,6 +978,9 @@
       </a>
       <a href="#comments" class="nav-item">
         <span class="nav-icon">💬</span> Comments Feed
+      </a>
+      <a href="#yt-library" class="nav-item">
+        <span class="nav-icon">▶️</span> YouTube Library
       </a>
     </div>
 
@@ -1133,6 +1345,66 @@
             </div>
           </div>
 
+        </div>
+      </div>
+
+      <!-- YOUTUBE VIDEO LIBRARY -->
+      <div id="yt-library" style="margin-bottom:20px;">
+        <div class="section-header">
+          <div>
+            <div class="section-label">YouTube Content Hub</div>
+            <div class="section-title">Video Library &amp; Timestamp Search</div>
+          </div>
+          <a href="https://www.youtube.com/@ChristopherRagsdale" target="_blank" class="view-all">Open Channel →</a>
+        </div>
+
+        <div class="card fade-in">
+          <div class="card-header">
+            <div>
+              <div class="card-title">📺 YouTube Videos</div>
+              <div class="card-sub">Pick a video · type a keyword · jump to the exact moment</div>
+            </div>
+            <span class="card-badge">128K Subscribers</span>
+          </div>
+          <div class="card-body">
+
+            <!-- Video selector tabs -->
+            <div class="yt-tabs-row" id="yt-video-tabs"></div>
+
+            <!-- Config note (visible until real IDs are pasted in) -->
+            <div id="yt-config-note" style="font-size:0.75rem;color:var(--text-dim);background:rgba(212,160,23,0.06);border:1px solid var(--border);border-radius:6px;padding:8px 14px;margin-bottom:14px;display:none;">
+              💡 Replace the <code style="color:var(--gold-dim);">PASTE_VIDEO_ID_*</code> placeholders in the <code style="color:var(--gold-dim);">ytVideos</code> array (bottom of this file's script block) with real YouTube video IDs to load live videos.
+            </div>
+
+            <!-- Player + search panel side by side -->
+            <div class="yt-player-grid">
+
+              <!-- Embedded player -->
+              <div>
+                <div class="yt-embed-wrap">
+                  <div id="yt-player"></div>
+                </div>
+                <div class="yt-now-playing" id="yt-now-playing">Select a video above to begin</div>
+              </div>
+
+              <!-- Search panel -->
+              <div>
+                <div class="yt-search-wrap">
+                  <span class="yt-search-icon">🔍</span>
+                  <input id="yt-search" type="text" placeholder="Search within video… e.g. mindset, pricing, leads" autocomplete="off" />
+                </div>
+
+                <div class="yt-scope-row">
+                  <button class="yt-scope-btn active" data-scope="current" onclick="ytSetScope(this,'current')">This Video</button>
+                  <button class="yt-scope-btn" data-scope="all" onclick="ytSetScope(this,'all')">All Videos</button>
+                </div>
+
+                <div id="yt-results-list" class="yt-results-list"></div>
+                <div id="yt-results-msg" class="yt-results-msg" style="display:none;"></div>
+              </div>
+
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1695,6 +1967,240 @@
         refreshCount++;
       }, 1200);
     }
+
+    // ── YouTube Video Library ──
+
+    // Replace PASTE_VIDEO_ID_* with real YouTube video IDs (e.g. 'dQw4w9WgXcQ')
+    const ytVideos = [
+      {
+        id: 'PASTE_VIDEO_ID_1',
+        title: 'How to Go Viral on Social Media (Full Blueprint)',
+        thumb: '📈', views: '1.8M', date: 'Dec 2025',
+        chapters: [
+          { t: 0,    label: 'Intro — What viral actually means',       tags: ['intro', 'viral', 'overview', 'algorithm'] },
+          { t: 68,   label: 'The Hook Formula (first 3 seconds)',       tags: ['hook', 'attention', 'scroll stop', 'retention'] },
+          { t: 189,  label: 'Understanding the Algorithm',              tags: ['algorithm', 'platform', 'tiktok', 'instagram', 'reach'] },
+          { t: 312,  label: 'Content Pillars & Consistency',            tags: ['content', 'pillars', 'consistency', 'posting schedule', 'strategy'] },
+          { t: 487,  label: 'The Engagement Loop Trick',                tags: ['engagement', 'comments', 'shares', 'loop', 'community'] },
+          { t: 634,  label: 'Pattern Interrupts That Work',             tags: ['pattern interrupt', 'edit', 'transition', 'b-roll', 'visual'] },
+          { t: 792,  label: 'Repurposing Content Across Platforms',     tags: ['repurpose', 'cross-post', 'multi-platform', 'omnichannel'] },
+          { t: 964,  label: 'Call to Action That Converts',             tags: ['cta', 'call to action', 'subscribe', 'follow', 'convert'] },
+          { t: 1102, label: 'Viral Checklist & Summary',                tags: ['checklist', 'summary', 'recap', 'action steps', 'takeaways'] },
+        ]
+      },
+      {
+        id: 'PASTE_VIDEO_ID_2',
+        title: '10 Marketing Secrets That Made Me $100K',
+        thumb: '🎯', views: '4.2M', date: 'Nov 2025',
+        chapters: [
+          { t: 0,    label: 'The $100K Journey',                        tags: ['intro', 'story', '100k', 'income', 'money'] },
+          { t: 54,   label: 'Secret #1 — Know Your Ideal Avatar',       tags: ['avatar', 'customer', 'audience', 'target market', 'niche'] },
+          { t: 178,  label: 'Secret #2 — The Value Stack',              tags: ['value', 'offer', 'price', 'product', 'service'] },
+          { t: 296,  label: 'Secret #3 — Emotional Storytelling',       tags: ['story', 'emotion', 'storytelling', 'brand', 'connection'] },
+          { t: 398,  label: 'Secret #4 — Scarcity & Urgency',           tags: ['scarcity', 'urgency', 'fomo', 'deadline', 'exclusive'] },
+          { t: 512,  label: 'Secret #5 — Social Proof Engine',          tags: ['social proof', 'testimonial', 'review', 'trust', 'results'] },
+          { t: 621,  label: 'Secret #6 — The Follow-Up System',         tags: ['follow up', 'email', 'sequence', 'nurture', 'crm', 'automation'] },
+          { t: 748,  label: 'Secret #7 — Paid Ads Amplifier',           tags: ['ads', 'paid', 'facebook ads', 'meta', 'budget', 'boost'] },
+          { t: 866,  label: 'Secret #8 — Referral Loops',               tags: ['referral', 'affiliate', 'word of mouth', 'viral loop'] },
+          { t: 978,  label: 'Secret #9 — Packaging Your Knowledge',     tags: ['course', 'ebook', 'coaching', 'digital product', 'info product'] },
+          { t: 1065, label: 'Secret #10 — The Mindset Multiplier',      tags: ['mindset', 'belief', 'confidence', 'abundance', 'psychology'] },
+          { t: 1142, label: 'Putting It All Together',                   tags: ['recap', 'summary', 'action plan', 'implementation', 'next steps'] },
+        ]
+      },
+      {
+        id: 'PASTE_VIDEO_ID_3',
+        title: 'Why Most Entrepreneurs Fail in Year One',
+        thumb: '🏆', views: '890K', date: 'Oct 2025',
+        chapters: [
+          { t: 0,   label: 'The Brutal Truth About Year One',           tags: ['intro', 'failure', 'year one', 'entrepreneur', 'statistics'] },
+          { t: 82,  label: 'Mistake #1 — Chasing Shiny Objects',        tags: ['shiny object', 'distraction', 'focus', 'clarity'] },
+          { t: 198, label: 'Mistake #2 — Underpricing Your Offer',      tags: ['pricing', 'underprice', 'charge more', 'rates', 'worth'] },
+          { t: 316, label: 'Mistake #3 — No Marketing Budget',          tags: ['marketing budget', 'ads', 'investment', 'roi', 'marketing'] },
+          { t: 441, label: 'Mistake #4 — Building Alone',               tags: ['team', 'hiring', 'delegation', 'partnership', 'network'] },
+          { t: 554, label: 'Mistake #5 — Ignoring Cash Flow',           tags: ['cash flow', 'money', 'revenue', 'finance', 'profit'] },
+          { t: 672, label: 'How to Actually Survive Year One',          tags: ['survival', 'strategy', 'success', 'framework', 'plan'] },
+          { t: 798, label: 'The Mindset Shift That Changes Everything', tags: ['mindset', 'shift', 'growth mindset', 'resilience', 'perspective'] },
+          { t: 928, label: 'Final Thoughts & Resources',                tags: ['summary', 'resources', 'links', 'outro', 'next steps'] },
+        ]
+      },
+      {
+        id: 'PASTE_VIDEO_ID_4',
+        title: 'The Blueprint for 6-Figure Earnings in 2026',
+        thumb: '💰', views: '1.1M', date: 'Jan 2026',
+        chapters: [
+          { t: 0,    label: 'What 6 Figures Actually Requires',         tags: ['intro', '6 figures', 'income', 'blueprint', 'roadmap'] },
+          { t: 92,   label: 'Picking the Right Business Model',         tags: ['business model', 'service', 'product', 'consulting', 'agency'] },
+          { t: 241,  label: 'Building Your Personal Brand Fast',        tags: ['personal brand', 'brand', 'authority', 'positioning', 'reputation'] },
+          { t: 412,  label: 'Lead Generation Systems That Work',        tags: ['leads', 'lead gen', 'funnel', 'traffic', 'acquisition'] },
+          { t: 601,  label: 'High-Ticket Sales Conversations',          tags: ['sales', 'high ticket', 'closing', 'discovery call', 'objections'] },
+          { t: 798,  label: 'Automating Your Revenue Engine',           tags: ['automation', 'systems', 'passive income', 'scale', 'workflow'] },
+          { t: 1002, label: 'Investing Back In Your Business',          tags: ['reinvest', 'invest', 'growth', 'scaling', 'team', 'tools'] },
+          { t: 1184, label: 'Month-by-Month 6-Figure Roadmap',         tags: ['roadmap', 'timeline', 'milestones', 'goals', 'monthly'] },
+          { t: 1402, label: 'Key Takeaways & Action Items',             tags: ['takeaways', 'action items', 'summary', 'checklist'] },
+        ]
+      },
+      {
+        id: 'PASTE_VIDEO_ID_5',
+        title: 'My Morning Routine That Changed Everything',
+        thumb: '☀️', views: '654K', date: 'Sep 2025',
+        chapters: [
+          { t: 0,   label: 'Why Morning Routines Matter',               tags: ['intro', 'morning', 'routine', 'habits', 'productivity'] },
+          { t: 78,  label: '5 AM Wake Up Protocol',                     tags: ['wake up', '5am', 'early', 'discipline', 'alarm'] },
+          { t: 168, label: 'Hydration & Movement First',                tags: ['hydration', 'water', 'movement', 'exercise', 'workout'] },
+          { t: 258, label: 'Journaling for Clarity',                    tags: ['journal', 'journaling', 'clarity', 'intention', 'affirmation'] },
+          { t: 372, label: 'The 3-Priority Focus Method',               tags: ['focus', 'priority', 'tasks', 'productivity', 'goals', 'mit'] },
+          { t: 468, label: 'Content Creation Window',                   tags: ['content', 'creation', 'video', 'social media', 'batch'] },
+          { t: 572, label: 'Results After 90 Days',                     tags: ['results', '90 days', 'transformation', 'before after', 'proof'] },
+          { t: 657, label: 'How to Start Your Own Routine',             tags: ['start', 'begin', 'your routine', 'customize', 'practical'] },
+        ]
+      },
+    ];
+
+    let ytPlayer = null;
+    let ytPlayerReady = false;
+    let ytCurrentIdx = 0;
+    let ytSearchScope = 'current';
+    let ytSearchTimer = null;
+
+    // Check if any real video IDs are present
+    const hasPlaceholderIds = ytVideos.every(v => v.id.startsWith('PASTE_VIDEO_ID'));
+    if (hasPlaceholderIds) {
+      document.getElementById('yt-config-note').style.display = 'block';
+    }
+
+    // Load YouTube IFrame API
+    (function() {
+      const s = document.createElement('script');
+      s.src = 'https://www.youtube.com/iframe_api';
+      document.head.appendChild(s);
+    })();
+
+    window.onYouTubeIframeAPIReady = function() {
+      ytPlayerReady = true;
+      ytLoadVideo(ytCurrentIdx, 0);
+    };
+
+    function ytLoadVideo(idx, seekTo) {
+      ytCurrentIdx = idx;
+      const v = ytVideos[idx];
+
+      document.querySelectorAll('.yt-video-tab').forEach((t, i) => t.classList.toggle('active', i === idx));
+
+      const nowEl = document.getElementById('yt-now-playing');
+      nowEl.innerHTML = `<strong style="color:var(--text);">${v.title}</strong>&nbsp;<span style="color:var(--text-dim);">${v.views} views · ${v.date}</span>`;
+
+      if (!ytPlayerReady) return;
+
+      const playerEl = document.getElementById('yt-player');
+
+      if (ytPlayer && ytPlayer.loadVideoById) {
+        ytPlayer.loadVideoById({ videoId: v.id, startSeconds: seekTo || 0 });
+      } else {
+        ytPlayer = new YT.Player('yt-player', {
+          videoId: v.id,
+          playerVars: { autoplay: seekTo ? 1 : 0, modestbranding: 1, rel: 0, color: 'white', start: seekTo || 0 },
+          events: { onReady: function(e) { if (seekTo) e.target.playVideo(); } }
+        });
+      }
+    }
+
+    function ytSeekTo(videoIdx, seconds) {
+      if (videoIdx !== ytCurrentIdx) {
+        ytLoadVideo(videoIdx, seconds);
+      } else if (ytPlayer && ytPlayer.seekTo) {
+        ytPlayer.seekTo(seconds, true);
+        ytPlayer.playVideo();
+      }
+    }
+
+    function ytSetScope(btn, scope) {
+      ytSearchScope = scope;
+      document.querySelectorAll('.yt-scope-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      ytSearch(document.getElementById('yt-search').value);
+    }
+
+    function ytFmtTime(s) {
+      const m = Math.floor(s / 60), sec = s % 60;
+      return m + ':' + String(sec).padStart(2, '0');
+    }
+
+    function ytHighlight(text, q) {
+      if (!q) return text;
+      const re = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+      return text.replace(re, '<mark style="background:rgba(212,160,23,0.3);color:var(--gold-light);border-radius:2px;padding:0 2px;">$1</mark>');
+    }
+
+    function ytRenderResult(vidIdx, ch, q, showTitle) {
+      const v = ytVideos[vidIdx];
+      return `<div class="yt-result-item" onclick="ytSeekTo(${vidIdx},${ch.t})">
+        <div class="yt-result-time">${ytFmtTime(ch.t)}</div>
+        <div class="yt-result-body">
+          <div class="yt-result-label">${ytHighlight(ch.label, q)}</div>
+          ${showTitle ? `<div class="yt-result-video">${v.title}</div>` : ''}
+          <div class="yt-result-tags">${ch.tags.slice(0,4).map(t => `<span class="yt-result-tag">${ytHighlight(t, q)}</span>`).join('')}</div>
+        </div>
+        <div class="yt-result-play">▶</div>
+      </div>`;
+    }
+
+    function ytSearch(query) {
+      const q = query.trim().toLowerCase();
+      const listEl = document.getElementById('yt-results-list');
+      const msgEl  = document.getElementById('yt-results-msg');
+      listEl.innerHTML = '';
+      msgEl.style.display = 'none';
+
+      if (!q) {
+        // Show all chapters for the current video
+        ytVideos[ytCurrentIdx].chapters.forEach(ch => {
+          listEl.innerHTML += ytRenderResult(ytCurrentIdx, ch, '', false);
+        });
+        return;
+      }
+
+      const searchVideos = ytSearchScope === 'all'
+        ? ytVideos.map((v, i) => ({ v, i }))
+        : [{ v: ytVideos[ytCurrentIdx], i: ytCurrentIdx }];
+
+      const matches = [];
+      searchVideos.forEach(({ v, i }) => {
+        v.chapters.forEach(ch => {
+          if (ch.label.toLowerCase().includes(q) || ch.tags.some(t => t.includes(q))) {
+            matches.push({ vidIdx: i, ch });
+          }
+        });
+      });
+
+      if (matches.length === 0) {
+        msgEl.style.display = 'block';
+        msgEl.textContent = 'No matches found. Try a different keyword.';
+      } else {
+        matches.forEach(m => {
+          listEl.innerHTML += ytRenderResult(m.vidIdx, m.ch, q, ytSearchScope === 'all');
+        });
+      }
+    }
+
+    // Build video selector tabs
+    const ytTabsEl = document.getElementById('yt-video-tabs');
+    ytVideos.forEach((v, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'yt-video-tab' + (i === 0 ? ' active' : '');
+      btn.innerHTML = `${v.thumb} <span style="overflow:hidden;text-overflow:ellipsis;">${v.title}</span> <span class="yt-tab-views">${v.views}</span>`;
+      btn.title = v.title;
+      btn.onclick = () => { ytLoadVideo(i, 0); ytSearch(document.getElementById('yt-search').value); };
+      ytTabsEl.appendChild(btn);
+    });
+
+    // Wire up search input
+    document.getElementById('yt-search').addEventListener('input', function() {
+      clearTimeout(ytSearchTimer);
+      ytSearchTimer = setTimeout(() => ytSearch(this.value), 200);
+    });
+
+    // Show first video's chapters on load
+    ytSearch('');
 
     // ── Smooth nav active state ──
     document.querySelectorAll('.nav-item').forEach(item => {
